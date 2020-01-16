@@ -459,6 +459,7 @@ public class JestElasticsearchClient implements ElasticsearchClient {
         .index(record.key.index)
         .type(record.key.type)
         .id(record.key.id)
+        .setParameter("retry_on_conflict", 5)
         .build();
   }
 
